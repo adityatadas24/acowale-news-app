@@ -1,0 +1,160 @@
+/* General Resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: #f4f4f4;
+  padding: 20px;
+}
+
+/* Container for the News List */
+.news-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.search-filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 100%;
+  max-width: 300px;
+}
+
+select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 150px;
+}
+
+
+/* News List Styling */
+.news-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+/* Each news card */
+.news-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+  max-width: 300px;
+  flex: 1 1 300px;
+}
+
+.news-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.news-card h3 {
+  font-size: 18px;
+  padding: 10px;
+}
+
+.news-card p {
+  font-size: 14px;
+  color: #666;
+  padding: 0 10px 10px;
+}
+
+/* Hover effect for the news card */
+.news-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Tablet View */
+@media (max-width: 768px) {
+  .search-filter {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .news-list {
+    gap: 15px;
+  }
+
+  .news-card {
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+
+  .news-card img {
+    height: 180px;
+  }
+}
+
+/* Mobile View */
+@media (max-width: 480px) {
+  .news-container {
+    padding: 10px;
+  }
+
+  .search-filter {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  input[type="text"] {
+    width: 100%;
+  }
+
+  select {
+    width: 100%;
+  }
+
+  .news-card img {
+    height: 150px;
+  }
+
+  .news-card h3 {
+    font-size: 16px;
+  }
+
+  .news-card p {
+    font-size: 12px;
+  }
+}
+
+
+/* Add smooth transition to all elements */
+.news-card {
+  transition: all 0.3s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+input[type="text"], select {
+  transition: border 0.3s ease;
+}
+
+/* Add focus effects for better accessibility */
+input[type="text"]:focus, select:focus {
+  outline: none;
+  border: 1px solid #007bff;
+}
